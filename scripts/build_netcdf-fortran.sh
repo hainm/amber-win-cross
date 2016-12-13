@@ -1,7 +1,6 @@
 #!/bin/sh
 
 yum install -y cmake
-PREFIX=`pwd`/local/
 version=4.4.4
 wget https://github.com/Unidata/netcdf-fortran/archive/v$version.tar.gz -O netcdf-fortran-$version.tar.gz
 tar -xf netcdf-fortran-$version.tar.gz
