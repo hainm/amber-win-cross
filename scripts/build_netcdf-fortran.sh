@@ -15,8 +15,10 @@ export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
 
 # Build static.
 mkdir build_static && cd build_static
-export CPPFLAGS=-I/work/local/include
-./configure --prefix=$PREFIX --enable-static --host=x86_64-w64-mingw3
+./configure --prefix=$PREFIX \
+            --enable-static \
+            CPPFLAGS=-I/work/local/include \
+            --host=x86_64-w64-mingw3
 
 make
 # ctest  # Run only for the shared lib build to save time.
