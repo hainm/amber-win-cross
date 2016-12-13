@@ -8,8 +8,8 @@ dependencies:
 
 test:
   override:
-      - docker run -it --rm ambermd/ambermd-win-cross bash scripts/build_netcdf.sh
+      - docker run -it --rm -v `pwd`:/work -w /work ambermd/ambermd-win-cross bash scripts/build_netcdf.sh
   post:
-    - echo "nothing"
+    - ls local/
     # - mkdir $CIRCLE_ARTIFACTS/pytraj-build
     # - cp dist/wheelhouse/pytraj*whl $CIRCLE_ARTIFACTS/pytraj-build/
