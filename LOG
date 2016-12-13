@@ -1,0 +1,2 @@
+amber:
+    ./configure --skip-python -noX11 --no-updates -windows -wine gnu
