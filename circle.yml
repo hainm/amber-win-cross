@@ -8,7 +8,9 @@ dependencies:
 
 test:
   override:
+      - mkdir local/
       - docker run -it --rm -v `pwd`:/work -w /work ambermd/amber-win-cross bash scripts/build_netcdf.sh
+      - docker run -it --rm -v `pwd`:/work -w /work ambermd/amber-win-cross bash scripts/build_netcdf-fortran.sh
   post:
     - ls local/
     - mkdir $CIRCLE_ARTIFACTS/build

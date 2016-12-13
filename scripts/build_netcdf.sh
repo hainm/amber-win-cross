@@ -1,6 +1,5 @@
 #!/bin/sh
 
-mkdir local/
 yum install unzip -y
 curl -fsS -o netcdf-4.3.3.zip ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4.3.3.zip
 unzip netcdf-4.3.3.zip
