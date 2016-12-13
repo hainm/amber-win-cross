@@ -16,7 +16,7 @@ export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
 ./configure --prefix=$PREFIX \
             --enable-static \
             CPPFLAGS=-I/work/local/include \
-            --host=x86_64-w64-mingw3
+            --host=x86_64-w64-mingw32
 make
 make install
 cd ../../
