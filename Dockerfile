@@ -16,4 +16,4 @@ RUN yum install -y unzip
 
 ADD mingw64_dll.zip /root/
 RUN cd /root/ && unzip mingw64_dll.zip
-RUN rm mingw64_dll.zip
+RUN rm /root/mingw64_dll.zip
