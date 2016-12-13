@@ -8,12 +8,10 @@ PREFIX=/work/local/
 echo "PREFIX" $PREFIX
 
 cd netcdf-fortran-$version
+SRC_DIR=`pwd`
+echo "SRC_DIR" ${SRC_DIR}
 
-# below is lightly changed from
-# https://github.com/conda-forge/netcdf-fortran-feedstock/blob/master/recipe/build.sh
 export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
-export LDFLAGS="$LDFLAGS -L$PREFIX/lib -Wl,-rpath,$PREFIX/lib"
-export CFLAGS="$CFLAGS fPIC -I$PREFIX/include"
 
 # Build static.
 mkdir build_static && cd build_static
