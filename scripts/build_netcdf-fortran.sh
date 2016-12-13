@@ -15,10 +15,8 @@ export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
 
 # Build static.
 mkdir build_static && cd build_static
-cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
-      -D CMAKE_INSTALL_LIBDIR:PATH=$PREFIX/lib \
-      -D BUILD_SHARED_LIBS=OFF \
-      $SRC_DIR
+export CPPFLAGS=-I/work/local/include
+./configure --prefix=$PREFIX --enable-static --host=x86_64-w64-mingw3
 
 make
 # ctest  # Run only for the shared lib build to save time.
