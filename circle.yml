@@ -11,5 +11,6 @@ test:
       - docker run -it --rm -v `pwd`:/work -w /work ambermd/amber-win-cross bash scripts/build_netcdf.sh
   post:
     - ls local/
-    # - mkdir $CIRCLE_ARTIFACTS/pytraj-build
-    # - cp dist/wheelhouse/pytraj*whl $CIRCLE_ARTIFACTS/pytraj-build/
+    - mkdir $CIRCLE_ARTIFACTS/build
+    - tar -cf build.tar local
+    - cp build.tar $CIRCLE_ARTIFACTS/build/
