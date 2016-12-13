@@ -11,4 +11,9 @@ ENV FC=/usr/bin/x86_64-w64-mingw32-gfortran
 
 # AMBER
 RUN yum install -y wine
-RUN yum install -y tcsh patch bison flex make
+RUN yum install -y tcsh patch bison flex make git
+RUN yum install -y unzip
+
+ADD mingw64_dll.zip /root/
+RUN cd /root/ && unzip mingw64_dll.zip
+RUN rm mingw64_dll.zip
